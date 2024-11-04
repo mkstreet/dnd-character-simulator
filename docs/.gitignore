@@ -1,0 +1,17 @@
+# LaTeX work products
+*.aux
+*.log
+*.out
+*.gz
+*.toc
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.blg
+*.bbl
+*.pdfsync
+*.dvi
+*.xdv
+*.nav
+*.snm
+

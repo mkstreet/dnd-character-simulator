@@ -1,0 +1,115 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\geometry{margin=1in}
+
+% Define Rust code listing style
+\lstdefinelanguage{Rust}{
+	keywords={fn, let, mut, pub, use, mod, struct, enum, impl, for, while, loop, if, else, match, return, break, continue},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={u8, i32, bool, String, Result, Option},
+	ndkeywordstyle=\color{purple}\bfseries,
+	comment=[l]{//},
+	commentstyle=\color{gray}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	sensitive=true
+}
+
+\lstset{
+	language=Rust,
+	basicstyle=\ttfamily\small,
+	columns=flexible,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	stepnumber=1,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	tabsize=4,
+	breaklines=true,
+	breakatwhitespace=true,
+	frame=single,
+	backgroundcolor=\color{white},
+	captionpos=b
+}
+
+\title{Guidance for Students: D\&D Character API}
+\author{}
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section*{Introduction}
+	Welcome to the \texttt{dnd-character-simulator} project, adapted to create and interact with a Dungeons \& Dragons (D\&D) character! In this project, you will use Rust to interact with a black box API that simulates a D\&D character sheet. Your goal is to call functions from the API to retrieve character attributes like name, class, ancestry, and stats like strength and intelligence.
+	
+	\section*{Getting Started with GitHub and Codespaces}
+	\begin{enumerate}
+		\item \textbf{Fork the Repository}
+		\begin{itemize}
+			\item Go to the main repository on GitHub.
+			\item Click the \texttt{Fork} button at the top right to create your own copy of the project.
+			\item You can find the forked repository under your GitHub profile.
+		\end{itemize}
+		
+		\item \textbf{Open GitHub Codespaces}
+		\begin{itemize}
+			\item In your forked repository, click the \texttt{Code} button and select \texttt{Codespaces}.
+			\item If you don’t have a codespace yet, create one by clicking \texttt{New Codespace}.
+			\item Once it loads, you’ll have a development environment with Rust pre-installed, ready for coding.
+		\end{itemize}
+	\end{enumerate}
+	
+	\section*{Understanding the Project Structure}
+	The \texttt{dnd-character-simulator} repository contains several Rust projects and tasks:
+	\begin{itemize}
+		\item \textbf{Basic Programming Tasks}: These tasks, found in the \texttt{basic-programming} directory, introduce Rust programming concepts.
+		\item \textbf{D\&D Character Tasks}: These tasks, located in the \texttt{src} directory, allow you to interact with the black box API and build a D\&D character.
+	\end{itemize}
+	
+	\subsection*{Switching Between Projects}
+	You’ll need to switch between different Rust projects for each task. Here’s how:
+	\begin{enumerate}
+		\item \textbf{To work on basic programming tasks}:
+		\begin{itemize}
+			\item Navigate to the \texttt{basic-programming} directory:
+			\begin{lstlisting}[language=bash]
+				cd ~/workspaces/dnd-character-simulator/basic-programming/basic_syntax
+			\end{lstlisting}
+			\item Use \texttt{cargo run} to run the code for basic programming tasks.
+		\end{itemize}
+		
+		\item \textbf{To work on D\&D character tasks}:
+		\begin{itemize}
+			\item Navigate to the \texttt{src} directory where the D\&D character code resides:
+			\begin{lstlisting}[language=bash]
+				cd ~/workspaces/dnd-character-simulator/src
+			\end{lstlisting}
+			\item Use \texttt{cargo run} to execute your code and interact with the D\&D character API.
+		\end{itemize}
+	\end{enumerate}
+	
+	\section*{Interacting with the D\&D Character API}
+	The API allows you to query various attributes of your character. Here are some key functions:
+	\begin{itemize}
+		\item \texttt{get\_character\_name()}: Returns the character's name.
+		\item \texttt{get\_character\_class()}: Returns the character's class, like "Wizard" or "Fighter".
+		\item \texttt{get\_character\_ancestry()}: Returns the character's ancestry, like "Human" or "Elf".
+		\item \texttt{get\_strength()}, \texttt{get\_dexterity()}, etc.: Returns attribute scores.
+	\end{itemize}
+	
+	\section*{General Workflow Tips}
+	\begin{itemize}
+		\item Always use the terminal to navigate between directories before running commands.
+		\item Check your directory with \texttt{pwd} before running commands to ensure you’re in the correct location.
+		\item Save your changes frequently and use \texttt{git commit} and \texttt{git push} to keep track of your work.
+	\end{itemize}
+	
+	\section*{Next Steps}
+	Once you understand the structure and how to switch between projects, you can start on the tasks. Refer to specific task documents for instructions on querying character details and calculating modifiers.
+	
+\end{document}

@@ -1,0 +1,18 @@
+# Set default behavior to handle line endings consistently
+* text=auto
+
+# Specific file types to enforce LF line endings
+*.toml text eol=lf
+*.rs text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.sh text eol=lf
+
+# Windows-specific files to enforce CRLF line endings
+*.bat text eol=crlf
+
+# Ignore binary files
+*.png binary
+*.jpg binary
+*.exe binary
+*.rlib binary

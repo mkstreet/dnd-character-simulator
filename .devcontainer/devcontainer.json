@@ -1,0 +1,9 @@
+{
+  "name": "Rust Dev Environment",
+  "image": "rust:latest",
+  "extensions": [
+    "rust-lang.rust-analyzer",
+    "ms-vscode.cpptools"
+  ]
+}
+

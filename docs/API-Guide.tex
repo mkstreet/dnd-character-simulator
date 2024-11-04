@@ -1,0 +1,106 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+
+\geometry{margin=1in}
+
+% Define Rust code listing style and set it as the default language
+\lstdefinelanguage{Rust}{
+	keywords={fn, let, pub, use, mod, struct, impl},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={u8, String},
+	ndkeywordstyle=\color{purple}\bfseries,
+	comment=[l]{//},
+	commentstyle=\color{gray}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	sensitive=true
+}
+
+\lstset{
+	language=Rust,
+	basicstyle=\ttfamily\small,
+	columns=flexible,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	stepnumber=1,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	tabsize=4,
+	breaklines=true,
+	breakatwhitespace=true,
+	frame=single,
+	backgroundcolor=\color{white},
+	captionpos=b
+}
+
+\title{API Guide for D\&D Character Simulator}
+\author{}
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section*{Introduction}
+	The D\&D Character Simulator API provides functions to retrieve character details like name, class, ancestry, and various attribute scores (strength, intelligence, etc.). This guide outlines the available functions and their expected outputs, allowing you to interact with and customize your D\&D character programmatically.
+	
+	\section*{Available API Functions}
+	
+	\subsection*{Basic Information}
+	These functions provide general character information.
+	
+	\begin{itemize}
+		\item \texttt{get\_character\_name()}: Returns the name of the character as a string.
+		\item \texttt{get\_character\_class()}: Returns the character’s class (e.g., "Wizard", "Fighter") as a string.
+		\item \texttt{get\_character\_ancestry()}: Returns the character’s ancestry (e.g., "Human", "Elf", "Dwarf") as a string.
+	\end{itemize}
+	
+	\subsection*{Character Attributes}
+	These functions return attribute scores for the character, with values ranging from 1 to 20. You can use these scores to calculate modifiers, which help determine a character’s strengths and weaknesses.
+	
+	\begin{itemize}
+		\item \texttt{get\_strength()}: Returns the strength score as an integer.
+		\item \texttt{get\_dexterity()}: Returns the dexterity score as an integer.
+		\item \texttt{get\_constitution()}: Returns the constitution score as an integer.
+		\item \texttt{get\_intelligence()}: Returns the intelligence score as an integer.
+		\item \texttt{get\_wisdom()}: Returns the wisdom score as an integer.
+		\item \texttt{get\_charisma()}: Returns the charisma score as an integer.
+	\end{itemize}
+	
+	\subsection*{Attribute Modifiers}
+	Each attribute has an associated modifier, calculated using the formula:
+	\[
+	\text{modifier} = \frac{\text{score} - 10}{2}
+	\]
+	You can write a function in Rust to calculate modifiers for each attribute score using this formula.
+	
+	\section*{Example Usage}
+	Here’s an example of how to use the API functions in your code:
+	
+	\begin{lstlisting}
+		fn main() {
+			let name = get_character_name();
+			let class = get_character_class();
+			let ancestry = get_character_ancestry();
+			let strength = get_strength();
+			let dexterity = get_dexterity();
+			
+			println!("Character Name: {}", name);
+			println!("Class: {}", class);
+			println!("Ancestry: {}", ancestry);
+			println!("Strength: {}", strength);
+			println!("Dexterity: {}", dexterity);
+		}
+	\end{lstlisting}
+	
+	\section*{Additional Notes}
+	- Each function returns a single value based on pre-set or randomized attributes.
+	- Use the character attributes and classes to design unique abilities or simulate game scenarios.
+	
+	This API guide provides the basic building blocks to interact with your D\&D character through Rust code, allowing for both fun and learning opportunities in programming.
+	
+\end{document}

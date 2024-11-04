@@ -1,0 +1,152 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{amsmath}
+
+\geometry{margin=1in}
+
+% Define Rust code listing style
+\lstdefinelanguage{Rust}{
+	keywords={fn, let, mut, pub, use, mod, struct, enum, impl, for, while, loop, if, else, match, return, break, continue},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={u8, i32, bool, String, Result, Option},
+	ndkeywordstyle=\color{purple}\bfseries,
+	comment=[l]{//},
+	commentstyle=\color{gray}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	sensitive=true
+}
+
+\lstset{
+	language=Rust,
+	basicstyle=\ttfamily\small,
+	columns=flexible,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	stepnumber=1,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	tabsize=4,
+	breaklines=true,
+	breakatwhitespace=true,
+	frame=single,
+	backgroundcolor=\color{white},
+	captionpos=b
+}
+
+\title{Programming 101: Introduction to Rust with D\&D Character Building}
+\author{}
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section*{Objective}
+	This document introduces you to basic programming concepts in Rust while creating a Dungeons \& Dragons (D\&D) character. You will learn to work with variables, data types, and basic operations in Rust by building elements of a D\&D character sheet.
+	
+	\section*{What is a Variable?}
+	A \textbf{variable} is like a container that holds a value. Think of it as a labeled box where you can store information about your character, such as their name, class, or strength.
+	
+	\subsection*{Declaring Variables}
+	In Rust, you use the \texttt{let} keyword to declare variables. When declaring a variable, you can specify its type, such as a whole number for an attribute like strength or a text string for the character’s name.
+	
+	\begin{lstlisting}[language=Rust]
+		let strength: u8 = 15;  // Declares an integer variable named strength
+		let name: &str = "Arin"; // Declares a string variable named name
+	\end{lstlisting}
+	
+	\section*{Basic Data Types in Rust}
+	In Rust, you’ll use data types to specify what kind of information a variable holds. Here are a few common types we’ll use for our D\&D character:
+	
+	\begin{itemize}
+		\item \textbf{Integer (\texttt{u8})}: Represents a whole number (from 0 to 255), ideal for scores like strength or intelligence.
+		\item \textbf{Boolean (\texttt{bool})}: Represents a true or false value, which could be used for states like \texttt{is\_alive}.
+		\item \textbf{String (\texttt{\&str})}: Represents text, useful for names, classes, and descriptions.
+	\end{itemize}
+	
+	\section*{Task: Create Basic Character Attributes}
+	In this task, you will declare variables for some basic character attributes. Define the following variables:
+	\begin{itemize}
+		\item \texttt{name}: A string holding your character’s name.
+		\item \texttt{class}: A string representing your character’s class (e.g., "Wizard", "Fighter").
+		\item \texttt{strength}, \texttt{dexterity}, \texttt{intelligence}: Integers holding attribute scores between 1 and 20.
+	\end{itemize}
+	
+	\subsection*{Example Code}
+	Here’s how you might declare these variables in Rust:
+	
+	\begin{lstlisting}[language=Rust]
+		fn main() {
+			let name: &str = "Arin";
+			let class: &str = "Fighter";
+			let strength: u8 = 16;
+			let dexterity: u8 = 12;
+			let intelligence: u8 = 14;
+			
+			println!("Character Name: {}", name);
+			println!("Class: {}", class);
+			println!("Strength: {}", strength);
+			println!("Dexterity: {}", dexterity);
+			println!("Intelligence: {}", intelligence);
+		}
+	\end{lstlisting}
+	
+	\section*{Performing Basic Operations}
+	In D\&D, each attribute score has a modifier. A modifier is calculated by the formula:
+	\[
+	\text{modifier} = \frac{\text{score} - 10}{2}
+	\]
+	We’ll use Rust to calculate the modifier for each attribute.
+	
+	\subsection*{Task: Calculate Modifiers}
+	Using the formula above, write a function that calculates the modifier for a given attribute score.
+	
+	\begin{lstlisting}[language=Rust]
+		fn calculate_modifier(score: u8) -> i8 {
+			((score as i8 - 10) / 2)
+		}
+		
+		fn main() {
+			let strength: u8 = 16;
+			let dexterity: u8 = 12;
+			let intelligence: u8 = 14;
+			
+			println!("Strength Modifier: {}", calculate_modifier(strength));
+			println!("Dexterity Modifier: {}", calculate_modifier(dexterity));
+			println!("Intelligence Modifier: {}", calculate_modifier(intelligence));
+		}
+	\end{lstlisting}
+	
+	\section*{Testing Your Code}
+	To test your code, make sure you’re in the correct project directory and run the following command:
+	\begin{lstlisting}[language=bash]
+		cargo run
+	\end{lstlisting}
+	You should see output similar to:
+	\begin{verbatim}
+		Character Name: Arin
+		Class: Fighter
+		Strength: 16
+		Dexterity: 12
+		Intelligence: 14
+		Strength Modifier: 3
+		Dexterity Modifier: 1
+		Intelligence Modifier: 2
+	\end{verbatim}
+	
+	\section*{Additional Exercises}
+	Now that you understand variables and basic operations, try the following exercises:
+	\begin{itemize}
+		\item Change the character’s class and attribute scores. Rerun the program to see how modifiers change.
+		\item Add more attributes, such as \texttt{wisdom} and \texttt{charisma}, and calculate their modifiers.
+		\item Modify the code to display a short character description based on their class and attributes.
+	\end{itemize}
+	
+	\section*{Next Steps}
+	Once you’re comfortable declaring variables and performing calculations, you’ll be ready to move on to more complex tasks, such as querying additional character information from the D\&D API. Each task will build on your knowledge to create a richer character experience.
+	
+\end{document}

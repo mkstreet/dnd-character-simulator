@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\geometry{margin=1in}
+
+% Define Rust code listing style
+\lstdefinelanguage{Rust}{
+	keywords={fn, let, mut, pub, use, mod, struct, enum, impl, for, while, loop, if, else, match, return, break, continue},
+	keywordstyle=\color{blue}\bfseries,
+	ndkeywords={u8, i32, bool, String, Result, Option},
+	ndkeywordstyle=\color{purple}\bfseries,
+	comment=[l]{//},
+	commentstyle=\color{gray}\ttfamily,
+	stringstyle=\color{red}\ttfamily,
+	sensitive=true
+}
+
+\lstset{
+	language=Rust,
+	basicstyle=\ttfamily\small,
+	columns=flexible,
+	numbers=left,
+	numberstyle=\tiny\color{gray},
+	stepnumber=1,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	tabsize=4,
+	breaklines=true,
+	breakatwhitespace=true,
+	frame=single,
+	backgroundcolor=\color{white},
+	captionpos=b
+}
+
+\title{Programming 101: Introduction to Rust with D\&D Characters}
+\author{}
+\date{}
+
+\begin{document}
+	
+	\maketitle
+	
+	\section*{Welcome to Programming 101}
+	This document introduces basic programming concepts using Rust and Dungeons \& Dragons (D\&D) characters. You'll learn to declare variables, understand data types, and use functions to interact with a simulated character sheet.
+	
+	\section*{What is a Variable?}
+	A \textbf{variable} is a way to store information in a program. Think of it as a labeled box where you can keep different values, like your character’s strength or name.
+	
+	\subsection*{Declaring Variables}
+	When you \textbf{declare} a variable, you create it and give it a name. In Rust, use the \texttt{let} keyword to declare variables:
+	\begin{lstlisting}[language=Rust]
+		let strength: u8 = 15; // Declares an integer variable named strength
+	\end{lstlisting}
+	
+	\section*{Basic Data Types in Rust}
+	Here are common data types used in Rust:
+	\begin{itemize}
+		\item \textbf{Integer (\texttt{u8})}: A whole number (0-255). Use for attributes like strength.
+		\item \textbf{String (\texttt{\&str})}: Text, like a character’s name or class.
+		\item \textbf{Boolean (\texttt{bool})}: A true or false value, like whether a character is currently alive.
+	\end{itemize}
+	
+	\section*{Navigating the Project Directory}
+	As you work on different tasks, you’ll need to navigate between project directories:
+	\begin{itemize}
+		\item \texttt{cd <directory>}: Change to a specific directory.
+		\item \texttt{pwd}: Print the current working directory.
+		\item \texttt{cargo run}: Run a Rust program from the current project.
+	\end{itemize}
+	
+	\subsection*{Switching Between Projects}
+	To access various tasks:
+	\begin{enumerate}
+		\item **Basic programming tasks** are in \texttt{basic-programming/basic\_syntax}:
+		\begin{lstlisting}[language=bash]
+			cd ~/workspaces/dnd-character-simulator/basic-programming/basic_syntax
+		\end{lstlisting}
+		
+		\item **D\&D character tasks** are in \texttt{src}:
+		\begin{lstlisting}[language=bash]
+			cd ~/workspaces/dnd-character-simulator/src
+		\end{lstlisting}
+	\end{enumerate}
+	
+	\section*{Interacting with the D\&D API}
+	Using Rust, you can query your character’s attributes through specific functions:
+	\begin{itemize}
+		\item \texttt{get\_character\_name()}: Returns a character’s name.
+		\item \texttt{get\_strength()}: Returns the strength score.
+		\item \texttt{get\_intelligence()}: Returns the intelligence score.
+	\end{itemize}
+	
+	\section*{Running Rust Programs}
+	Once you’re in the correct project directory, use this command to run the program:
+	\begin{lstlisting}[language=bash]
+		cargo run
+	\end{lstlisting}
+	
+	\section*{Basic Workflow Tips}
+	\begin{itemize}
+		\item Use \texttt{pwd} to check your current directory.
+		\item Save your code regularly.
+		\item Use \texttt{git add}, \texttt{git commit}, and \texttt{git push} to save changes to GitHub.
+	\end{itemize}
+	
+	\section*{Next Steps}
+	Once you’re comfortable navigating directories and running Rust programs, you’re ready to start working with the D\&D character tasks. Check each task document for detailed instructions.
+	
+\end{document}

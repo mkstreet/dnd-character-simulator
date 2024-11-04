@@ -1,0 +1,3 @@
+[dependencies]
+blackbox_api = { path = "lib" }
+
