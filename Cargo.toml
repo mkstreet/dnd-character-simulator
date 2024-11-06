@@ -3,5 +3,9 @@ name = "dnd_character_simulator"
 version = "0.1.0"
 edition = "2018"
 
+# Specify the build script
+build = "build.rs"
+
 [dependencies]
-dnd_character_api = { path = "compiled_lib" }
+dnd_character_api_wrapper = { path = "dnd_character_api_wrapper" }
+

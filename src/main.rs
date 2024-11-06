@@ -1,10 +1,7 @@
-
-// Import the library
-use dnd_character_api::*;
+use dnd_character_api_wrapper::{get_name};
 
 fn main() {
-    println!("Welcome to the DND Character Simulator!");
-    // Call functions from the dnd character API here
+    let name = get_name();
+    println!("Character Name: {}", name);
+
 }
-
-
