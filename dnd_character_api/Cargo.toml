@@ -1,8 +1,0 @@
-[package]
-name = "dnd_character_api"
-version = "0.1.0"
-edition = "2018"
-
-[lib]
-name = "dnd_character_api"
-path = "src/lib.rs"
