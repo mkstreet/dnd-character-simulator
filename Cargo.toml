@@ -1,3 +1,7 @@
-[dependencies]
-blackbox_api = { path = "lib" }
+[package]
+name = "dnd_character_simulator"
+version = "0.1.0"
+edition = "2018"
 
+[dependencies]
+dnd_character_api = { path = "compiled_lib" }

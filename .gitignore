@@ -39,3 +39,6 @@ Thumbs.db       # Windows
 # Backup files
 *.swp
 *.swo
+
+
+auto-push.sh
