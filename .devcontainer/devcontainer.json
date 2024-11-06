@@ -1,9 +1,6 @@
 {
-  "name": "Rust Dev Environment",
-  "image": "rust:latest",
-  "extensions": [
-    "rust-lang.rust-analyzer",
-    "ms-vscode.cpptools"
-  ]
+  "name": "Rust Development",
+  "image": "mcr.microsoft.com/vscode/devcontainers/rust:latest",
+  "runArgs": ["--env", "LD_LIBRARY_PATH=/workspaces/dnd-character-simulator/external_libs"],
+  "postCreateCommand": "cargo build"
 }
-
