@@ -6,6 +6,10 @@ extern "C" {
     pub fn get_name() -> *const c_char;
 }
 
+
+mod studentcode; // Code students write
+
+
 fn main() {
     unsafe {
         let name_ptr = get_name();
